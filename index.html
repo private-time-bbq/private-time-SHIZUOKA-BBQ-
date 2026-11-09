@@ -97,9 +97,9 @@
     .hero {
       position: relative;
       background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
-                  url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+                  url('e2c2bea27bb4a1273a47996d686aa63f_0d4dbab515cf7c10ab3c2f104e697f11.jpg') center/cover no-repeat;
       color: #ffffff;
-      padding: 100px 0 80px;
+      padding: 110px 0 90px;
       text-align: center;
     }
     .hero-badge {
@@ -223,6 +223,18 @@
       border-radius: var(--radius);
       padding: 30px;
     }
+    .section-photo-wrap {
+      text-align: center;
+      margin: 24px 0 28px;
+    }
+    .section-photo-wrap img {
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      max-height: 420px;
+      object-fit: cover;
+    }
+
     .pizza-steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -294,7 +306,7 @@
       font-size: 0.85rem;
     }
 
-    /* Rules accordion/list */
+    /* Rules & Photo */
     .rule-item {
       margin-bottom: 20px;
     }
@@ -302,6 +314,60 @@
       color: #b91c1c;
       font-size: 1rem;
       margin-bottom: 6px;
+    }
+    .rules-photo-container {
+      max-width: 860px;
+      margin: 32px auto 0;
+      text-align: center;
+    }
+    .rules-photo-container img {
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      max-height: 480px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* YouTube Videos Section */
+    .video-showcase {
+      max-width: 860px;
+      margin: 40px auto 0;
+    }
+    .video-showcase-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .video-showcase-title h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .video-showcase-title p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     /* Access & Contact */
@@ -353,6 +419,9 @@
       .tel-link {
         font-size: 1.6rem;
       }
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -372,7 +441,7 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero (トップメイン写真) -->
   <div class="hero">
     <div class="container">
       <span class="hero-badge">静岡市葵区鍵穴・藁科川上流</span>
@@ -421,9 +490,14 @@
   <section id="pizza" style="background: #fff;">
     <div class="container">
       <div class="pizza-box">
-        <div style="text-align: center; margin-bottom: 20px;">
+        <div style="text-align: center; margin-bottom: 16px;">
           <h2 style="color: var(--accent); font-size: 1.6rem;">＼セルフピザ窯で自分だけのピザを焼こう！／</h2>
           <p style="font-size: 0.95rem; margin-top: 6px;">当店のドラム缶ピザ窯は自由にお使いいただけるセルフスタイルです。お好みの生地と具材を持ち込んで熱々の本格ピザをお楽しみください！</p>
+        </div>
+
+        <!-- ピザ窯写真 -->
+        <div class="section-photo-wrap">
+          <img src="f04a1303d44e1667400a57de903f0a42_1e0d2acfed49ba9da054afddf4ace0c6.jpg" alt="手作りのセルフピザ窯">
         </div>
         
         <h4 style="color: var(--text); margin-bottom: 10px;">【焼き方のポイント】</h4>
@@ -561,6 +635,38 @@
           <p style="font-size: 0.9rem;">敷地内外（駐車場含む）での事故、怪我、盗難、お客様同士のトラブル等につきましては当施設では一切の責任を負いかねます。貴重品やお荷物の管理には十分ご注意ください。</p>
         </div>
       </div>
+
+      <!-- ご利用規約下の写真 -->
+      <div class="rules-photo-container">
+        <img src="053e25691a8db64d191643a460b84d84_c9cd80909e68895384cdb637c45cc303.jpg" alt="BBQ場施設風景">
+      </div>
+
+      <!-- YouTube動画エリア -->
+      <div class="video-showcase">
+        <div class="video-showcase-title">
+          <h3>場内の雰囲気を動画でチェック</h3>
+          <p>自然に囲まれたプライベートな空間を動画でご覧いただけます</p>
+        </div>
+        <div class="video-grid">
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube.com/embed/ZIs6gvVzhQE?start=8" 
+              title="場内の雰囲気・施設紹介 1" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube.com/embed/DC83iwiPk0I?start=5" 
+              title="場内の雰囲気・施設紹介 2" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
