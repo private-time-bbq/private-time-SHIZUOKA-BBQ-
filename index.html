@@ -87,10 +87,11 @@
       color: #fff !important;
       padding: 8px 18px;
       border-radius: 999px;
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.2s;
     }
     .btn-reserve-nav:hover {
       background: var(--accent-hover);
+      transform: translateY(-1px);
     }
 
     /* Hero */
@@ -139,6 +140,9 @@
       border-radius: 999px;
       box-shadow: 0 4px 14px rgba(217, 119, 6, 0.4);
       transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
     .btn-primary:hover {
       background: var(--accent-hover);
@@ -382,13 +386,29 @@
       font-size: 1.6rem;
       margin-bottom: 16px;
     }
+    .btn-reserve-large {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 999px;
+      box-shadow: 0 4px 18px rgba(217, 119, 6, 0.45);
+      margin: 20px 0 24px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-reserve-large:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
     .tel-link {
       display: inline-block;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 700;
       color: #fef08a;
       letter-spacing: 0.05em;
-      margin: 16px 0;
+      margin: 8px 0;
     }
     .owner-message {
       font-family: 'Yomogi', cursive;
@@ -417,7 +437,11 @@
         padding: 24px 16px;
       }
       .tel-link {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+      }
+      .btn-reserve-large {
+        font-size: 1.05rem;
+        padding: 14px 24px;
       }
       .video-grid {
         grid-template-columns: 1fr;
@@ -436,7 +460,8 @@
         <a href="#pizza">ピザ窯</a>
         <a href="#price">料金・設備</a>
         <a href="#rules">ご利用規約</a>
-        <a href="#contact" class="btn-reserve-nav">ご予約・お問い合わせ</a>
+        <!-- ヘッダー右上の予約ボタン（直接RESERVAへ） -->
+        <a href="https://reserva.be/privatetimeshizuoka1" target="_blank" rel="noopener noreferrer" class="btn-reserve-nav">📅 オンライン予約</a>
       </nav>
     </div>
   </header>
@@ -448,7 +473,8 @@
       <h1>1日1組限定の<br>完全プライベートBBQ場</h1>
       <p>周囲を気にせず、仲間や家族だけで過ごす特別な時間。<br>手作りのドラム缶ピザ窯や屋根付き設備完備。小雨でも安心してお楽しみいただけます。</p>
       <div class="hero-cta">
-        <a href="#contact" class="btn-primary">空き状況・ご予約はこちら</a>
+        <!-- メインビジュアルの予約ボタン（直接RESERVAへ） -->
+        <a href="https://reserva.be/privatetimeshizuoka1" target="_blank" rel="noopener noreferrer" class="btn-primary">📅 空き状況・オンライン予約</a>
         <a href="#price" class="btn-secondary">料金・設備を見る</a>
       </div>
     </div>
@@ -677,17 +703,25 @@
         <h3>ご予約・お問い合わせ</h3>
         <p>1日1組限定のため、週末を中心にお早めのご予約をおすすめいたします。</p>
         
-        <div style="margin: 24px 0;">
-          <p style="font-size: 0.95rem; opacity: 0.85;">ご予約・お問い合わせ窓口（担当：井澤）</p>
+        <!-- オンライン予約ボタン（RESERVA直通） -->
+        <div>
+          <a href="https://reserva.be/privatetimeshizuoka1" target="_blank" rel="noopener noreferrer" class="btn-reserve-large">
+            📅 オンライン予約はこちら（RESERVA）
+          </a>
+        </div>
+
+        <div style="margin: 20px 0;">
+          <p style="font-size: 0.95rem; opacity: 0.85;">お電話でのお問い合わせ（担当：井澤）</p>
           <a href="tel:09050050700" class="tel-link">📞 090-5005-0700</a>
           <p style="font-size: 0.85rem; opacity: 0.8;">※受付・確認対応時間：20:00～24:00（確認後折り返しいたします）</p>
         </div>
 
         <div style="background: rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 16px; max-width: 600px; margin: 0 auto; text-align: left; font-size: 0.9rem;">
-          <p><strong>【営業形態】</strong></p>
+          <p><strong>【営業形態・ご予約時の注意事項】</strong></p>
           <p>・基本営業日：土曜日・日曜日（8:00〜18:00）</p>
           <p>・平日利用：電話またはLINEにて要相談</p>
           <p>・直前（7日以内）予約の方はお手数ですが予約完了後にお電話でのご確認をお願いいたします。</p>
+          <p>・予約フォームの連絡事項欄に「ピザ窯の使用：有または無」を必ずご入力ください。</p>
         </div>
 
         <div style="margin-top: 30px;">
