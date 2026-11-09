@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>private time ～SHIZUOKA BBQ～ | 静岡市葵区の1日1組限定バーベキュー場</title>
+  <meta name="description" content="静岡市葵区鍵穴の藁科川上流にある1日1組限定の貸切BBQ場。セルフピザ窯や屋根付き設備完備。手作りプライベート空間で贅沢なアウトドアを。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Yomogi&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2d5a27;
+      --primary-light: #487e3f;
+      --accent: #d97706;
+      --accent-hover: #b45309;
+      --bg-cream: #faf7f2;
+      --surface: #ffffff;
+      --text: #2c2c2c;
+      --text-muted: #666666;
+      --border: #e5e0d8;
+      --radius: 12px;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background-color: var(--bg-cream);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+    .brand {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--primary);
+      letter-spacing: 0.05em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .btn-reserve-nav {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 999px;
+      transition: background 0.2s;
+    }
+    .btn-reserve-nav:hover {
+      background: var(--accent-hover);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
+                  url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: #ffffff;
+      padding: 100px 0 80px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin: 0 auto 30px;
+      opacity: 0.95;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 32px;
+      font-weight: 700;
+      border-radius: 999px;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.4);
+      transition: 0.2s;
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--text);
+      padding: 14px 28px;
+      font-weight: 700;
+      border-radius: 999px;
+      transition: 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #ffffff;
+    }
+
+    /* Notice banner */
+    .notice-section {
+      margin-top: -30px;
+      position: relative;
+      z-index: 2;
+    }
+    .notice-card {
+      background: #fff;
+      border-left: 5px solid var(--accent);
+      border-radius: 8px;
+      padding: 20px 24px;
+      box-shadow: var(--shadow);
+      font-size: 0.9rem;
+    }
+    .notice-card strong {
+      color: var(--accent-hover);
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    /* Sections general */
+    section {
+      padding: 70px 0;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+    .section-title h2 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Grid & Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    /* Pizza section */
+    .pizza-box {
+      background: #fff8f0;
+      border: 2px dashed #f59e0b;
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+    .pizza-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .step-item {
+      background: #fff;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #fed7aa;
+    }
+    .step-num {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      margin-bottom: 8px;
+    }
+
+    /* Price Table */
+    .price-box {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .price-row:last-child {
+      border-bottom: none;
+    }
+    .price-amount {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--accent);
+    }
+
+    /* Equipments lists */
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .tag {
+      background: var(--bg-cream);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+    }
+
+    /* Rules accordion/list */
+    .rule-item {
+      margin-bottom: 20px;
+    }
+    .rule-item h4 {
+      color: #b91c1c;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    /* Access & Contact */
+    .contact-container {
+      background: #2b3a29;
+      color: #ffffff;
+      border-radius: var(--radius);
+      padding: 40px;
+      text-align: center;
+    }
+    .contact-container h3 {
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+    }
+    .tel-link {
+      display: inline-block;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fef08a;
+      letter-spacing: 0.05em;
+      margin: 16px 0;
+    }
+    .owner-message {
+      font-family: 'Yomogi', cursive;
+      font-size: 1.15rem;
+      margin-top: 30px;
+      padding-top: 24px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.25);
+      line-height: 1.9;
+    }
+
+    /* Footer */
+    footer {
+      background: #1f271e;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      padding: 24px 0;
+      font-size: 0.8rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+      .contact-container {
+        padding: 24px 16px;
+      }
+      .tel-link {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <div class="brand">private time ～SHIZUOKA BBQ～</div>
+      <nav class="nav-links">
+        <a href="#about">施設概要</a>
+        <a href="#pizza">ピザ窯</a>
+        <a href="#price">料金・設備</a>
+        <a href="#rules">ご利用規約</a>
+        <a href="#contact" class="btn-reserve-nav">ご予約・お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="container">
+      <span class="hero-badge">静岡市葵区鍵穴・藁科川上流</span>
+      <h1>1日1組限定の<br>完全プライベートBBQ場</h1>
+      <p>周囲を気にせず、仲間や家族だけで過ごす特別な時間。<br>手作りのドラム缶ピザ窯や屋根付き設備完備。小雨でも安心してお楽しみいただけます。</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">空き状況・ご予約はこちら</a>
+        <a href="#price" class="btn-secondary">料金・設備を見る</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Announcement Banner -->
+  <div class="container notice-section">
+    <div class="notice-card">
+      <strong>【営業に関するご案内】</strong>
+      <p>現在、オーナーの体調に配慮しながら営業を行っております。例年と比べサービス内容や対応に一部変更が生じる場合がございますが、何卒ご理解のほどお願い申し上げます。</p>
+    </div>
+  </div>
+
+  <!-- About / Features -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>こだわりと魅力</h2>
+        <p>1日1組だからこそ味わえる贅沢なひととき</p>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <h3>完全貸切プライベート</h3>
+          <p>他のお客様と一緒になることはありません。1名様から最大24名様まで、椅子をご持参いただければ増員も可能です。周囲を気にせずゆったり過ごせます。</p>
+        </div>
+        <div class="card">
+          <h3>屋根付きで小雨でも安心</h3>
+          <p>雨除けの屋根、洋式トイレ、炊事場を完備。小雨程度であれば問題なく開催可能です。悪天候や河川増水時は当日キャンセル料無料でお受けしています。</p>
+        </div>
+        <div class="card">
+          <h3>駐車場10台分完備</h3>
+          <p>広々とした駐車スペースをご用意しておりますので、複数台でのお乗り合わせでもスムーズにお越しいただけます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pizza Oven Section -->
+  <section id="pizza" style="background: #fff;">
+    <div class="container">
+      <div class="pizza-box">
+        <div style="text-align: center; margin-bottom: 20px;">
+          <h2 style="color: var(--accent); font-size: 1.6rem;">＼セルフピザ窯で自分だけのピザを焼こう！／</h2>
+          <p style="font-size: 0.95rem; margin-top: 6px;">当店のドラム缶ピザ窯は自由にお使いいただけるセルフスタイルです。お好みの生地と具材を持ち込んで熱々の本格ピザをお楽しみください！</p>
+        </div>
+        
+        <h4 style="color: var(--text); margin-bottom: 10px;">【焼き方のポイント】</h4>
+        <div class="pizza-steps">
+          <div class="step-item">
+            <span class="step-num">1</span>
+            <p><strong>予熱する</strong><br>薪で1時間じっくり窯を温めます。</p>
+          </div>
+          <div class="step-item">
+            <span class="step-num">2</span>
+            <p><strong>ピザを入れる</strong><br>薪を奥に押し込んで生地を投入。</p>
+          </div>
+          <div class="step-item">
+            <span class="step-num">3</span>
+            <p><strong>火力を調整</strong><br>火が弱まったら薪を追加（火傷注意）。</p>
+          </div>
+          <div class="step-item">
+            <span class="step-num">4</span>
+            <p><strong>回して焼き上げ</strong><br>目を離さず回しながらベストな焼き加減に！</p>
+          </div>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center;">※オンライン予約時、連絡事項欄に<strong>「ピザ窯の使用：有または無」</strong>を必ずご入力ください（事前の薪準備等のため）。焼き方で分からないことがあれば当日オーナーにお気軽にお声がけください！</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Price & Equipment -->
+  <section id="price">
+    <div class="container">
+      <div class="section-title">
+        <h2>料金・設備・レンタル備品</h2>
+        <p>場所と充実の設備をお貸し出しするセルフスタイルです</p>
+      </div>
+
+      <div class="price-box" style="margin-bottom: 40px;">
+        <h3 style="color: var(--primary); margin-bottom: 16px; font-size: 1.2rem;">基本利用料金</h3>
+        <div class="price-row">
+          <span>大人（高校生以上）</span>
+          <span class="price-amount">1,000円 / 人</span>
+        </div>
+        <div class="price-row">
+          <span>中学生以下</span>
+          <span class="price-amount">無料</span>
+        </div>
+        <div class="price-row">
+          <span>1グループ最低料金</span>
+          <span class="price-amount">5,000円〜</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 10px;">※少人数（1〜4名様）でのご利用時も最低料金5,000円となります。</p>
+      </div>
+
+      <div class="equipment-grid">
+        <div class="card">
+          <h3>設備環境</h3>
+          <p>屋根付きスペース（小雨OK） / 洋式トイレ（土足厳禁・スリッパ完備） / 炊事場 / 喫煙所 / ドラム缶ピザ窯 / 燻製窯 / 巨大コンロ / 駐車場10台</p>
+          <div style="margin-top: 12px; font-size: 0.85rem; color: #b91c1c;">
+            ※施設の水道水は生水のため飲用不可です。飲み水はご持参ください。
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>無料レンタル備品</h3>
+          <div class="tag-list">
+            <span class="tag">トング</span>
+            <span class="tag">火バサミ</span>
+            <span class="tag">まな板</span>
+            <span class="tag">包丁</span>
+            <span class="tag">フライ返し</span>
+            <span class="tag">菜箸</span>
+            <span class="tag">ザル</span>
+            <span class="tag">ボウル</span>
+            <span class="tag">キッチンバサミ</span>
+            <span class="tag">鍋</span>
+            <span class="tag">パエリア鍋</span>
+            <span class="tag">鉄板</span>
+            <span class="tag">カセットコンロ</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>お客様にご用意いただくもの</h3>
+          <p>お好きな食材・お飲み物・調味料・紙皿・紙コップ・割り箸・<strong>炭・着火剤</strong><br>（ピザ窯を使う方：ピザ生地・トッピング具材）</p>
+        </div>
+
+        <div class="card">
+          <h3>有料オプション・その他</h3>
+          <ul style="padding-left: 20px; font-size: 0.9rem; line-height: 1.8;">
+            <li>ピザ窯用の薪：1,000円</li>
+            <li>新品の網：1,000円</li>
+            <li>ゴミ処分代行：1袋につき100円</li>
+            <li>オーナーのピザ焼き代行：3枚まで無料（4枚目以降＋1,000円）</li>
+            <li>キャンプ利用：要相談</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rules & Policy -->
+  <section id="rules" style="background: #fff;">
+    <div class="container">
+      <div class="section-title">
+        <h2>ご利用規約・注意事項</h2>
+        <p>皆様に快適・安全にお過ごしいただくため、必ずお読みください</p>
+      </div>
+
+      <div class="card" style="max-width: 860px; margin: 0 auto;">
+        <div class="rule-item">
+          <h4>1. 施設利用・片付けのマナー</h4>
+          <ul style="padding-left: 20px; font-size: 0.9rem; line-height: 1.8;">
+            <li><strong>ゴミの処理：</strong>原則すべてお持ち帰りください（有料処分は1袋100円）。</li>
+            <li><strong>後片付け：</strong>使用した調理器具・備品はきれいに洗い、元の位置へお戻しください。</li>
+            <li><strong>かまど・火気：</strong>かまどで使用できる燃料は「炭」のみです。ゴミやプラスチック等を燃やす行為は厳禁です。</li>
+            <li><strong>トイレ：</strong>土足厳禁です。備え付けのスリッパに履き替えてご利用ください。</li>
+            <li><strong>禁止エリア：</strong>花壇への立ち入りは禁止です。</li>
+          </ul>
+        </div>
+
+        <div class="rule-item">
+          <h4>2. 近隣への配慮・騒音マナー</h4>
+          <p style="font-size: 0.9rem;">違法駐車や、大声・爆音スピーカー等の騒音行為は近隣住民のご迷惑となりますので固くお断りいたします。迷惑行為と判断した場合は退場および以後の利用をお断りすることがございます。</p>
+        </div>
+
+        <div class="rule-item">
+          <h4>3. キャンセルポリシー・雨天時の対応</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 8px;"><strong>1日1組限定の貸切</strong>のため、直前キャンセルは他のお客様をお断りしている関係上ご遠慮いただいております。</p>
+          <ul style="padding-left: 20px; font-size: 0.9rem; line-height: 1.8;">
+            <li><strong>10日前〜のキャンセル：</strong>天候不良以外の理由でのキャンセルはご遠慮ください。無断・直前キャンセルの場合、以後のご予約をお受けできない場合がございます。</li>
+            <li><strong>雨天・悪天候時：</strong>豪雨や河川の増水等によるキャンセルは、<strong>当日でもキャンセル料なし</strong>で承ります。無理をなさらずご相談ください。</li>
+          </ul>
+        </div>
+
+        <div class="rule-item" style="margin-bottom: 0;">
+          <h4>4. 免責事項</h4>
+          <p style="font-size: 0.9rem;">敷地内外（駐車場含む）での事故、怪我、盗難、お客様同士のトラブル等につきましては当施設では一切の責任を負いかねます。貴重品やお荷物の管理には十分ご注意ください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Access & Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-container">
+        <h3>ご予約・お問い合わせ</h3>
+        <p>1日1組限定のため、週末を中心にお早めのご予約をおすすめいたします。</p>
+        
+        <div style="margin: 24px 0;">
+          <p style="font-size: 0.95rem; opacity: 0.85;">ご予約・お問い合わせ窓口（担当：井澤）</p>
+          <a href="tel:09050050700" class="tel-link">📞 090-5005-0700</a>
+          <p style="font-size: 0.85rem; opacity: 0.8;">※受付・確認対応時間：20:00～24:00（確認後折り返しいたします）</p>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 16px; max-width: 600px; margin: 0 auto; text-align: left; font-size: 0.9rem;">
+          <p><strong>【営業形態】</strong></p>
+          <p>・基本営業日：土曜日・日曜日（8:00〜18:00）</p>
+          <p>・平日利用：電話またはLINEにて要相談</p>
+          <p>・直前（7日以内）予約の方はお手数ですが予約完了後にお電話でのご確認をお願いいたします。</p>
+        </div>
+
+        <div style="margin-top: 30px;">
+          <p style="font-size: 1.1rem; font-weight: 700;">【所在地】</p>
+          <p style="margin-top: 4px;">静岡県静岡市葵区鍵穴737（または737-1）</p>
+          <div style="margin-top: 14px;">
+            <a href="https://maps.google.com/?q=静岡県静岡市葵区鍵穴737" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #fff; color: #1f271e; padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: 0.9rem;">Google マップで経路を開く</a>
+          </div>
+        </div>
+
+        <div class="owner-message">
+          「一組限定の空間の思い出を沢山の人達が、大切に思えますように心から願います。」<br>
+          <span style="font-size: 0.9rem; opacity: 0.8;">― private time オーナーより</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; private time ～SHIZUOKA BBQ～ All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
